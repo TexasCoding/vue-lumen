@@ -1,4 +1,4 @@
-let mix = require('laravel-mix').mix;
+const mix = require('laravel-mix').mix;
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +11,9 @@ let mix = require('laravel-mix').mix;
  |
  */
 
-mix.js('src/app.js', 'dist/')
-   .sass('src/app.scss', 'dist/');
+mix.js('./resources/js/app.js', './public/js/')
+  .sass('./resources/scss/app.scss', './public/css/')
+  .copy('./node_modules/font-awesome/fonts', './public/css/fonts/');
 
 // Full API
 // mix.js(src, output);
